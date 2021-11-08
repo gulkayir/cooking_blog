@@ -45,4 +45,6 @@ class Image(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='images')
 
     def __str__(self):
-        return self.image.url
+        if self.image:
+            return self.image.url
+        return ''

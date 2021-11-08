@@ -15,15 +15,14 @@
 
 									<hr class="major" />
 										{% for image in images %}
-											{% if image %}
-												<img src="{{ image.url }}" class="rounded float-start" alt="...">
-<!--												<img src="{{ image.url }}" class="img-thumbnail" alt="...">-->
-											{% endif %}
+												<img style="width: 500px; height: 500px;" src="{{ image }}" class="rounded float-start" alt="...">
+
 										{% endfor %}
 
 
 									<h2>{{ recipe.description|truncatewords:10 }}</h2>
 									<p>{{ recipe.description }}</p>
+
 									<a href="{% url 'update-recipe' recipe.id %}"><i class="fas fa-edit"></i></a>
 									<a href="{% url 'delete-recipe' recipe.id %}"><i class="fas fa-trash-alt"></i></a>
 

@@ -105,8 +105,9 @@ def update_recipe(request, pk):
     formset = ImageFormSet(request.POST or None, request.FILES or None, queryset=Image.objects.filter(recipe=recipe))
     if recipe_form.is_valid() and formset.is_valid():
         recipe = recipe_form.save()
-
+        print(formset, '2222')
         for form in formset:
+
             image = form.save(commit=False)
             image.recipe = recipe
             image.save()
