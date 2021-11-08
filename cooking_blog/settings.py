@@ -136,6 +136,9 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+LOGIN_REDIRECT_URL = '/account/myprofile'
+LOGOUT_REDIRECT_URL = '/cooking'
+
 AUTH_USER_MODEL = 'account.User'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
